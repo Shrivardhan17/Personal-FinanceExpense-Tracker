@@ -1,0 +1,31 @@
+<div class="list-container">
+  <h3>Recent Transactions</h3>
+  
+  <div class="table-header">
+    <span>Item</span>
+    <span>Amount</span>
+    <span>Actions</span>
+  </div>
+
+  <ul class="expense-list">
+    <!-- This loop goes through every expense in your service -->
+    @for (item of expenseService.expenses(); track item.id) {
+      <li class="expense-item">
+        <div class="details">
+          <span class="title">{{ item.title }}</span>
+          <span class="category-badge">{{ item.category }}</span>
+        </div>
+        
+        <span class="amount">{{ item.amount | currency }}</span>
+
+        <!-- This button calls the delete function we added to the service -->
+        <button class="delete-btn" (click)="expenseService.deleteExpense(item.id)">
+          Delete
+        </button>
+      </li>
+    } @empty {
+      <!-- This shows only if the list is empty -->
+      <p class="empty-msg">No transactions found. Add one above to get started!</p>
+    }
+  </ul>
+</div>

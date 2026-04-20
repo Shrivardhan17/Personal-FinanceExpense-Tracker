@@ -1,0 +1,18 @@
+<h1>My Personal Expense Tracker</h1>
+
+<div class="salary-section">
+  <label>Monthly Salary: </label>
+  <input type="number" 
+         [value]="expenseService.salary()" 
+         #salaryInput 
+         (input)="expenseService.updateSalary(+salaryInput.value)">
+</div>
+
+<div class="balance-card">
+  <h2>Remaining Balance: {{ expenseService.totalBalance() | currency }}</h2>
+  <p>Income: {{ expenseService.salary() | currency }}</p>
+</div>
+
+<hr>
+<app-expense-form></app-expense-form>
+<app-expense-list></app-expense-list>

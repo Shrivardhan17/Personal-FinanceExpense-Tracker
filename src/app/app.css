@@ -1,0 +1,16 @@
+.balance-card {
+  background: #f8f9fa;
+  padding: 15px;
+  border-left: 5px solid #007bff;
+  margin: 20px 0;
+}
+
+.salary-section {
+  margin-bottom: 10px;
+}
+
+input[type="number"] {
+  padding: 5px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
